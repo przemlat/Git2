@@ -8,8 +8,6 @@ import java.io.IOException;
 
 class BridgeFinder {
 
-    private static StringBuilder bridges = new StringBuilder();
-
     public static void main(String[] args) throws IOException {
         FileReader fileReader = new FileReader("text.txt");
         BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -44,13 +42,13 @@ class BridgeFinder {
                 nodes[Character.getNumericValue(lowNode.charAt(j))].addNode(nodes[index]);
             }
         }
-        BridgeFinder bridgeFinder = new BridgeFinder(nodes, bridges);
+        BridgeFinder bridgeFinder = new BridgeFinder(nodes);
         bridgeFinder.getResult();
     }
 
     private Node[] nodes;
 
-    private BridgeFinder(Node[] nodes, StringBuilder bridges) {
+    private BridgeFinder(Node[] nodes) {
         this.nodes = nodes;
     }
 
